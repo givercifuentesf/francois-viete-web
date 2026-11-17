@@ -1,0 +1,23 @@
+<!-- SECCIÓN 5: IMPACTO EN LA ACTUALIDAD -->
+<section id="impacto" class="section">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">05 · Legado contemporáneo</span>
+            <h2>Impacto en la actualidad</h2>
+            <p class="section-lead">
+                Distinguimos entre las influencias históricas directas de la obra de Viète y las
+                aplicaciones modernas de los conceptos simbólicos que contribuyó a fundar.
+            </p>
+        </header>
+
+        <div class="impact-grid reveal">
+            {% for item in impact %}
+            <article class="impact-card">
+                <span class="impact-type">{{ item.type }}</span>
+                <h3>{{ item.area }}</h3>
+                <p>{{ item.description }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

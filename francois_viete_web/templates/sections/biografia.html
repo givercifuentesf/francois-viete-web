@@ -1,0 +1,57 @@
+<!-- SECCIÓN 2: BIOGRAFÍA -->
+<section id="biografia" class="section section-parchment">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">02 · Vida y entorno histórico</span>
+            <h2>Biografía y contexto renacentista</h2>
+            <p class="section-lead">
+                Un jurista y consejero de Estado que, en sus horas de retiro y ocio intelectual,
+                sentó las bases del simbolismo algebraico moderno.
+            </p>
+        </header>
+
+        <!-- Ficha biográfica verificada -->
+        <div class="bio-facts-grid reveal">
+            {% for fact in biography.vital_facts %}
+            <article class="fact-card">
+                <h3>{{ fact.label }}</h3>
+                <p>{{ fact.value }}</p>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Trayectoria vital -->
+        <div class="bio-narrative-grid reveal">
+            {% for block in biography.narrative %}
+            <article class="narrative-card">
+                <h3>{{ block.title }}</h3>
+                <p>{{ block.text }}</p>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Contexto político, social y científico -->
+        <div class="context-banner reveal">
+            {% for ctx in biography.context_cards %}
+            <div class="context-item">
+                <h3>{{ ctx.title }}</h3>
+                <p>{{ ctx.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Personajes históricos relacionados -->
+        <div class="figures-block reveal">
+            <h3 class="subsection-title">Personajes históricos vinculados a su trayectoria</h3>
+            <div class="figures-grid">
+                {% for person in biography.historical_figures %}
+                <article class="figure-card">
+                    <span class="figure-role">{{ person.role }}</span>
+                    <h4>{{ person.name }}</h4>
+                    <p>{{ person.relation }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

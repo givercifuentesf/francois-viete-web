@@ -1,0 +1,117 @@
+<!-- SECCIÓN 7: JUEGO INTERACTIVO -->
+<section id="juego" class="section">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">07 · Desafío educativo · El reto del arte analítico</span>
+            <h2>Juego interactivo: Trivia sobre François Viète</h2>
+            <p class="section-lead">
+                Pon a prueba lo aprendido sobre la vida, el contexto histórico y los aportes
+                matemáticos de François Viète en rondas de 5 preguntas aleatorias.
+            </p>
+        </header>
+
+        <div class="game-board-card trivia-container reveal" id="triviaApp">
+            <!-- Barra superior de progreso y puntuación -->
+            <div class="game-topbar trivia-topbar">
+                <div class="trivia-progress-info">
+                    <span class="status-badge status-upcoming" id="triviaCounter">Pregunta 1 de 5</span>
+                    <div class="trivia-progress-bar" aria-label="Progreso de la partida">
+                        <div class="trivia-progress-fill" id="triviaProgressFill"></div>
+                    </div>
+                </div>
+
+                <div class="trivia-indicators" id="triviaDots" aria-label="Estado de respuestas">
+                    <span class="trivia-dot" data-index="0">1</span>
+                    <span class="trivia-dot" data-index="1">2</span>
+                    <span class="trivia-dot" data-index="2">3</span>
+                    <span class="trivia-dot" data-index="3">4</span>
+                    <span class="trivia-dot" data-index="4">5</span>
+                </div>
+
+                <div class="game-scoreboard">
+                    <div class="score-box">
+                        <span>Puntuación</span>
+                        <strong id="triviaScore">0 / 5</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-layout">
+                <!-- Panel lateral de instrucciones -->
+                <aside class="game-panel trivia-instructions">
+                    <h3>Instrucciones</h3>
+                    <ul class="trivia-rules-list">
+                        <li>Cada partida consta de <strong>5 preguntas aleatorias</strong> sin repetición.</li>
+                        <li>Selecciona una de las cuatro opciones (<strong>A, B, C o D</strong>).</li>
+                        <li>Pulsa <strong>«Comprobar respuesta»</strong> para ver la retroalimentación educativa.</li>
+                        <li>Cada acierto suma <strong>1 punto</strong> (máximo 5 puntos).</li>
+                    </ul>
+                </aside>
+
+                <!-- Área principal de preguntas y resultados -->
+                <div class="game-stage">
+                    <!-- Vista activa de pregunta -->
+                    <div class="trivia-question-view" id="triviaQuestionView">
+                        <span class="stage-label" id="triviaCategory">Categoría</span>
+                        <h3 class="trivia-question-text" id="triviaQuestionText">Cargando pregunta...</h3>
+
+                        <div class="trivia-options" id="triviaOptions" role="radiogroup" aria-labelledby="triviaQuestionText">
+                            <!-- Opciones generadas dinámicamente por trivia.js -->
+                        </div>
+
+                        <p class="trivia-warning hidden" id="triviaWarning" role="alert">
+                            Por favor, selecciona una opción antes de comprobar tu respuesta.
+                        </p>
+
+                        <!-- Caja de retroalimentación educativa -->
+                        <div class="trivia-feedback hidden" id="triviaFeedback" aria-live="polite">
+                            <strong class="feedback-title" id="feedbackTitle"></strong>
+                            <p class="feedback-correct-answer hidden" id="feedbackCorrectAnswer"></p>
+                            <p class="feedback-explanation" id="feedbackExplanation"></p>
+                        </div>
+
+                        <div class="trivia-actions">
+                            <button type="button" class="btn btn-primary" id="btnCheckAnswer">
+                                Comprobar respuesta
+                            </button>
+                            <button type="button" class="btn btn-secondary hidden" id="btnNextQuestion">
+                                Siguiente pregunta
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pantalla final de resultados -->
+                    <div class="trivia-results-view hidden" id="triviaResultsView" aria-live="polite">
+                        <span class="stage-label">Resultado de la partida</span>
+                        <h3 class="results-heading">Desafío completado</h3>
+
+                        <div class="results-stats-grid">
+                            <div class="result-stat-box">
+                                <span>Puntuación final</span>
+                                <strong id="resFinalScore">0 / 5</strong>
+                            </div>
+                            <div class="result-stat-box stat-correct">
+                                <span>Correctas</span>
+                                <strong id="resCorrectCount">0</strong>
+                            </div>
+                            <div class="result-stat-box stat-wrong">
+                                <span>Incorrectas</span>
+                                <strong id="resWrongCount">0</strong>
+                            </div>
+                            <div class="result-stat-box">
+                                <span>Porcentaje</span>
+                                <strong id="resPercentage">0%</strong>
+                            </div>
+                        </div>
+
+                        <p class="results-message" id="resCustomMessage"></p>
+
+                        <button type="button" class="btn btn-primary" id="btnPlayAgain">
+                            Volver a jugar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

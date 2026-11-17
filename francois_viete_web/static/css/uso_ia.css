@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Estilos para la Sección 10: Uso de inteligencia artificial en el proyecto
+   Mantiene la paleta, tipografía y jerarquía visual del resto del sitio.
+   ========================================================================== */
+
+.ai-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.ai-tool-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.55rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.ai-tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-gold);
+}
+
+.ai-tool-header {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+    margin-bottom: 0.95rem;
+}
+
+.ai-logo-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border: 1px solid var(--border-subtle);
+}
+
+.ai-logo-badge svg {
+    width: 26px;
+    height: 26px;
+}
+
+.ai-logo-chatgpt {
+    background: #eef5f2;
+    color: #165c47;
+    border-color: #c9dfd6;
+}
+
+.ai-logo-gemini {
+    background: #eef2f8;
+    color: var(--accent-navy);
+    border-color: #cbd5e4;
+}
+
+.ai-logo-elevenlabs {
+    background: #f8f2e6;
+    color: var(--accent-burgundy);
+    border-color: var(--accent-gold-soft);
+}
+
+.ai-tool-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 0.15rem;
+}
+
+.ai-tool-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--accent-navy);
+    line-height: 1.2;
+}
+
+.ai-tool-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-burgundy);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.ai-tool-list {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.93rem;
+    color: var(--ink-secondary);
+}
+
+.ai-reflection-card {
+    background: var(--accent-navy);
+    color: #f6f1e6;
+    border-radius: var(--radius-lg);
+    padding: 1.85rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(230, 213, 184, 0.25);
+}
+
+.ai-reflection-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(230, 213, 184, 0.14);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold-soft);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.ai-reflection-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.ai-reflection-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    color: var(--accent-gold-soft);
+    margin-bottom: 0.45rem;
+}
+
+.ai-reflection-body p {
+    font-size: 0.96rem;
+    color: #e4ddd0;
+    line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+    .ai-reflection-card {
+        flex-direction: column;
+        padding: 1.4rem;
+    }
+}

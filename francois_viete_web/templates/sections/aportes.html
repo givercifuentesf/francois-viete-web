@@ -1,0 +1,92 @@
+<!-- SECCIÓN 4: APORTES A LAS MATEMÁTICAS -->
+<section id="aportes" class="section section-parchment">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">04 · Contribuciones científicas</span>
+            <h2>Aportes fundamentales a las matemáticas</h2>
+            <p class="section-lead">
+                Desde la creación de la <em>logistica speciosa</em> hasta las relaciones entre raíces
+                y coeficientes, el cálculo de ángulos múltiples y la primera expresión infinita de $\pi$.
+            </p>
+        </header>
+
+        <!-- Tarjetas de aportes principales -->
+        <div class="contributions-grid reveal">
+            {% for pillar in contributions.pillars %}
+            <article class="contribution-card">
+                <span class="pill-tag">{{ pillar.tag }}</span>
+                <h3>{{ pillar.title }}</h3>
+                <p>{{ pillar.summary }}</p>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Fórmula de Viète para Pi -->
+        <div class="formula-showcase reveal">
+            <div class="formula-text">
+                <span class="pill-tag">Hito de 1593</span>
+                <h3>El primer producto infinito de la historia para $\pi$</h3>
+                <p>
+                    Aplicando el método de Arquímedes con polígonos inscritos de hasta
+                    $6 \times 2^{16} = 393\,216$ lados y relaciones trigonométricas de ángulo mitad,
+                    Viète obtuvo $\pi$ con 10 cifras decimales y formuló el siguiente producto infinito:
+                </p>
+                <div class="math-block">
+                    $$ {{ contributions.pi_formula_latex }} $$
+                </div>
+            </div>
+            <div class="formula-interactive">
+                <h4>Aproximación interactiva de Viète</h4>
+                <p class="small-note">Desliza el número de factores ($n$) para observar la convergencia hacia $\pi \approx 3.1415926535\dots$</p>
+                <label for="piTermsRange" class="range-label">
+                    Factores del producto: <strong id="piTermsValue">4</strong>
+                </label>
+                <input type="range" id="piTermsRange" min="1" max="12" value="4">
+                <div class="pi-readout">
+                    <span>Aproximación: <strong id="piApproxOutput">3.140331</strong></span>
+                    <span>Error absoluto: <strong id="piErrorOutput">0.001261</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejemplo matemático completamente resuelto paso a paso -->
+        <div class="worked-example-card reveal">
+            <header class="example-header">
+                <span class="pill-tag">Ejemplo resuelto paso a paso</span>
+                <h3>{{ contributions.worked_example.title }}</h3>
+                <p>{{ contributions.worked_example.intro }}</p>
+            </header>
+
+            <div class="steps-list">
+                {% for item in contributions.worked_example.steps %}
+                <div class="step-item">
+                    <h4>{{ item.step }}</h4>
+                    <div class="step-math">{{ item.math }}</div>
+                    <p>{{ item.explanation }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Explorador interactivo de las Fórmulas de Viète -->
+            <div class="viete-lab">
+                <div class="lab-header">
+                    <h4>Laboratorio interactivo: Fórmulas de Viète ($x^2 - Sx + P = 0$)</h4>
+                    <p>Elige dos raíces positivas $r_1$ y $r_2$ para comprobar cómo determinan los coeficientes del polinomio.</p>
+                </div>
+                <div class="lab-controls">
+                    <div class="input-group">
+                        <label for="root1Input">Raíz positiva $r_1$</label>
+                        <input type="number" id="root1Input" value="3" min="1" max="50" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="root2Input">Raíz positiva $r_2$</label>
+                        <input type="number" id="root2Input" value="4" min="1" max="50" step="1">
+                    </div>
+                </div>
+                <div class="lab-output" id="vieteLabOutput" aria-live="polite">
+                    <!-- Actualizado dinámicamente por main.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

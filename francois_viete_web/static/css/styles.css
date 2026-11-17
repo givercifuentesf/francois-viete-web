@@ -1,0 +1,1182 @@
+/* ==========================================================================
+   François Viète (1540–1603) — Hoja de estilos académica renacentista
+   ========================================================================== */
+
+:root {
+    --bg-ivory: #fdfaf3;
+    --bg-parchment: #f4ecdc;
+    --bg-card: #ffffff;
+    --ink-primary: #1a2433;
+    --ink-secondary: #434d5c;
+    --ink-muted: #656e7c;
+    --accent-navy: #1d2d44;
+    --accent-gold: #9e7129;
+    --accent-gold-soft: #e6d5b8;
+    --accent-burgundy: #6f262e;
+    --border-subtle: #dfd3bd;
+
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-sm: 0 4px 14px rgba(26, 36, 51, 0.06);
+    --shadow-md: 0 12px 30px rgba(26, 36, 51, 0.09);
+    --transition: 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 78px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-ivory);
+    color: var(--ink-primary);
+    line-height: 1.68;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--accent-navy);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-gold);
+}
+
+.container {
+    width: min(1160px, 92%);
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Cabecera y navegación responsive
+   -------------------------------------------------------------------------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(253, 250, 243, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--ink-primary);
+}
+
+.brand-monogram {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-navy);
+    color: #fdfaf3;
+    border: 1.5px solid var(--accent-gold);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.brand-text strong {
+    font-family: var(--font-display);
+    font-size: 1rem;
+}
+
+.brand-text small {
+    color: var(--ink-muted);
+    font-size: 0.75rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink-secondary);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--bg-parchment);
+    color: var(--accent-navy);
+}
+
+.nav-link.active {
+    box-shadow: inset 0 -2px 0 var(--accent-gold);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--ink-primary);
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   Secciones generales y encabezados
+   -------------------------------------------------------------------------- */
+.section {
+    padding: 4.75rem 0;
+}
+
+.section-parchment {
+    background-color: var(--bg-parchment);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header {
+    max-width: 760px;
+    margin-bottom: 2.75rem;
+}
+
+.section-kicker,
+.eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.55rem;
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    color: var(--accent-navy);
+    line-height: 1.22;
+    margin-bottom: 0.75rem;
+}
+
+.section-lead {
+    color: var(--ink-secondary);
+    font-size: 1.04rem;
+}
+
+.subsection-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--accent-navy);
+    margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Sección 1: Inicio (Hero)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 4.5rem 0 5rem;
+    background: radial-gradient(circle at top right, #f3e8d2 0%, var(--bg-ivory) 62%);
+}
+
+.hero-geometry {
+    position: absolute;
+    right: -60px;
+    top: -40px;
+    width: 440px;
+    height: 440px;
+    color: var(--accent-gold);
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4.8vw, 3.6rem);
+    color: var(--accent-navy);
+    line-height: 1.1;
+    margin-bottom: 0.45rem;
+}
+
+.hero-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--ink-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-quote {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.15rem 1.4rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+}
+
+.quote-latin {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--accent-burgundy);
+}
+
+.quote-translation {
+    font-weight: 600;
+    color: var(--ink-primary);
+    margin-top: 0.2rem;
+}
+
+.hero-quote footer {
+    margin-top: 0.4rem;
+    font-size: 0.84rem;
+    color: var(--ink-muted);
+}
+
+.hero-intro {
+    color: var(--ink-secondary);
+    margin-bottom: 1.8rem;
+    font-size: 1.03rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.78rem 1.4rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary {
+    background: var(--accent-navy);
+    color: #fdfaf3;
+}
+
+.btn-primary:hover {
+    background: var(--accent-burgundy);
+    color: #fdfaf3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1.5px solid var(--accent-navy);
+    color: var(--accent-navy);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-navy);
+    color: #fdfaf3;
+}
+
+.hero-portrait-card {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-md);
+}
+
+.portrait-frame {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--accent-gold-soft);
+}
+
+.hero-portrait-card figcaption {
+    padding: 0.9rem 0.35rem 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.hero-portrait-card figcaption strong {
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    color: var(--accent-navy);
+}
+
+.hero-portrait-card figcaption span {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Sección 2: Biografía
+   -------------------------------------------------------------------------- */
+.bio-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.15rem;
+    margin-bottom: 2.25rem;
+}
+
+.fact-card,
+.narrative-card,
+.figure-card,
+.contribution-card,
+.impact-card,
+.curiosity-card,
+.ai-field-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.35rem 1.45rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.fact-card h3 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 0.45rem;
+}
+
+.fact-card p {
+    font-size: 0.94rem;
+    color: var(--ink-primary);
+}
+
+.bio-narrative-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem;
+    margin-bottom: 2rem;
+}
+
+.narrative-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.55rem;
+}
+
+.context-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background: var(--accent-navy);
+    color: #f6f1e6;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2.5rem;
+}
+
+.context-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--accent-gold-soft);
+    margin-bottom: 0.5rem;
+}
+
+.context-item p {
+    font-size: 0.95rem;
+    color: #e2dcd0;
+}
+
+.figures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.15rem;
+}
+
+.figure-role {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--accent-burgundy);
+    margin-bottom: 0.25rem;
+}
+
+.figure-card h4 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.4rem;
+}
+
+.figure-card p {
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Sección 3: Línea de tiempo interactiva
+   -------------------------------------------------------------------------- */
+.timeline-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 2.25rem;
+}
+
+.filter-btn {
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    color: var(--ink-secondary);
+    font-weight: 600;
+    font-size: 0.86rem;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent-navy);
+    color: #fdfaf3;
+    border-color: var(--accent-navy);
+}
+
+.timeline-wrapper {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid var(--accent-gold-soft);
+    display: grid;
+    gap: 1.35rem;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-item.hidden {
+    display: none;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.47rem;
+    top: 1.35rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    border: 3px solid var(--bg-ivory);
+    box-shadow: 0 0 0 2px var(--accent-gold);
+}
+
+.timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.3rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.45rem;
+}
+
+.timeline-year {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--accent-burgundy);
+    font-size: 1.05rem;
+}
+
+.timeline-era-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-parchment);
+    color: var(--accent-navy);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+.timeline-card h3 {
+    font-size: 1.12rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.35rem;
+}
+
+.timeline-rigor-note {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--accent-burgundy);
+    background: #fdf2f2;
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Sección 4: Aportes a las matemáticas
+   -------------------------------------------------------------------------- */
+.contributions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.pill-tag {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    background: var(--bg-parchment);
+    padding: 0.22rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+}
+
+.contribution-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.32rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.5rem;
+}
+
+.formula-showcase {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.math-block {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg-ivory);
+    border: 1px dashed var(--accent-gold);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    font-size: 1.08rem;
+}
+
+.formula-interactive {
+    background: var(--bg-parchment);
+    padding: 1.4rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+}
+
+.formula-interactive h4 {
+    color: var(--accent-navy);
+    margin-bottom: 0.35rem;
+}
+
+.small-note {
+    font-size: 0.86rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+}
+
+.range-label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent-navy);
+    margin-bottom: 0.9rem;
+}
+
+.pi-readout {
+    display: grid;
+    gap: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    color: var(--accent-navy);
+}
+
+.worked-example-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.example-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.5rem;
+}
+
+.steps-list {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.step-item {
+    background: var(--bg-ivory);
+    border-left: 3px solid var(--accent-navy);
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.step-item h4 {
+    font-size: 0.96rem;
+    color: var(--accent-burgundy);
+    margin-bottom: 0.35rem;
+}
+
+.step-math {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    padding: 0.55rem 0.8rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.45rem;
+    overflow-x: auto;
+}
+
+.viete-lab {
+    background: var(--accent-navy);
+    color: #f8f4eb;
+    padding: 1.6rem;
+    border-radius: var(--radius-md);
+}
+
+.lab-header h4 {
+    font-family: var(--font-display);
+    color: var(--accent-gold-soft);
+    margin-bottom: 0.25rem;
+}
+
+.lab-header p {
+    font-size: 0.9rem;
+    color: #dcd5c7;
+    margin-bottom: 1.1rem;
+}
+
+.lab-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.input-group label {
+    font-size: 0.82rem;
+    color: var(--accent-gold-soft);
+}
+
+.input-group input {
+    width: 130px;
+    padding: 0.5rem 0.65rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent-gold);
+    background: #fdfaf3;
+    color: var(--ink-primary);
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.lab-output {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(230, 213, 184, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   Sección 5: Impacto actual
+   -------------------------------------------------------------------------- */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.impact-type {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--accent-burgundy);
+    margin-bottom: 0.35rem;
+}
+
+.impact-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.32rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.45rem;
+}
+
+/* --------------------------------------------------------------------------
+   Sección 6 y 7: Podcast & Juego (Espacios reservados)
+   -------------------------------------------------------------------------- */
+.podcast-studio-card,
+.game-board-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.podcast-studio-card {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.placeholder-frame {
+    aspect-ratio: 1 / 1;
+    border: 2px dashed var(--accent-gold);
+    border-radius: var(--radius-md);
+    background: var(--bg-parchment);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.2rem;
+    gap: 0.4rem;
+    color: var(--ink-secondary);
+}
+
+.placeholder-icon {
+    font-size: 2rem;
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+}
+
+.status-pending,
+.status-upcoming {
+    background: var(--bg-parchment);
+    color: var(--accent-burgundy);
+    border: 1px solid var(--accent-gold-soft);
+}
+
+.podcast-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.5rem;
+}
+
+.audio-player-mock {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-ivory);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.2rem;
+    margin: 1.25rem 0;
+}
+
+.play-btn-disabled {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #c7bba4;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: not-allowed;
+    flex-shrink: 0;
+}
+
+.player-track {
+    flex: 1;
+}
+
+.player-times {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.45rem;
+    gap: 0.5rem;
+}
+
+.progress-bar-bg {
+    height: 7px;
+    background: var(--border-subtle);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--accent-gold);
+}
+
+.transcript-placeholder {
+    border: 1px dashed var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.15rem;
+    background: #fcfaf5;
+}
+
+.transcript-placeholder h4 {
+    font-size: 0.94rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.3rem;
+}
+
+.game-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 1.5rem;
+}
+
+.game-scoreboard {
+    display: flex;
+    gap: 1rem;
+}
+
+.score-box {
+    background: var(--bg-parchment);
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-sm);
+    text-align: center;
+}
+
+.score-box span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+}
+
+.score-box strong {
+    font-family: var(--font-mono);
+    color: var(--accent-navy);
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+}
+
+.game-panel,
+.game-question-placeholder,
+.game-results-placeholder {
+    background: var(--bg-ivory);
+    border: 1px dashed var(--accent-gold);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+}
+
+.game-stage {
+    display: grid;
+    gap: 1rem;
+}
+
+.stage-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+}
+
+.game-question-placeholder h3 {
+    font-family: var(--font-display);
+    color: var(--accent-navy);
+    margin: 0.35rem 0 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Sección 8, 9 y 10: Curiosidades, Fuentes APA, Uso de IA
+   -------------------------------------------------------------------------- */
+.curiosities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.curiosity-index {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.curiosity-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.28rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.45rem;
+}
+
+.curiosity-source {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+
+.bibliography-list {
+    list-style: decimal;
+    padding-left: 1.4rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.bib-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.35rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.bib-citation {
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+    color: var(--ink-primary);
+}
+
+.bib-link {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-size: 0.86rem;
+    word-break: break-all;
+    color: var(--accent-burgundy);
+}
+
+.ai-transparency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem;
+}
+
+.ai-field-card h3 {
+    font-size: 1rem;
+    color: var(--accent-navy);
+    margin-bottom: 0.65rem;
+}
+
+.manual-slot {
+    min-height: 92px;
+    border: 1.5px dashed var(--border-subtle);
+    border-radius: var(--radius-sm);
+    background: var(--bg-ivory);
+    padding: 0.85rem;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Pie de página y animaciones moderadas
+   -------------------------------------------------------------------------- */
+.site-footer {
+    background: var(--accent-navy);
+    color: #e6dfd1;
+    padding: 2.2rem 0;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.footer-brand {
+    font-family: var(--font-display);
+    color: var(--accent-gold-soft);
+    margin-bottom: 0.25rem;
+}
+
+.footer-note,
+.footer-meta p {
+    font-size: 0.86rem;
+    color: #cbc3b4;
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 0.35rem;
+    color: var(--accent-gold-soft);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsividad (Tabletas y celulares)
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+    .hero-grid,
+    .bio-narrative-grid,
+    .context-banner,
+    .formula-showcase,
+    .podcast-studio-card,
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--bg-ivory);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 1rem 1.25rem;
+        display: none;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .nav-link {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 3.4rem 0;
+    }
+
+    .worked-example-card,
+    .podcast-studio-card,
+    .game-board-card {
+        padding: 1.35rem;
+    }
+
+    .timeline-wrapper {
+        padding-left: 1.45rem;
+    }
+
+    .timeline-marker {
+        left: -1.92rem;
+    }
+}

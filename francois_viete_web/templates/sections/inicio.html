@@ -1,0 +1,52 @@
+<!-- SECCIÓN 1: INICIO -->
+<section id="inicio" class="hero-section">
+    <!-- Elemento geométrico decorativo sutil estilo compás renacentista -->
+    <svg class="hero-geometry" viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="200" r="160" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4 6"/>
+        <circle cx="200" cy="200" r="115" fill="none" stroke="currentColor" stroke-width="0.6"/>
+        <polygon points="200,40 338,280 62,280" fill="none" stroke="currentColor" stroke-width="0.7"/>
+        <line x1="200" y1="20" x2="200" y2="380" stroke="currentColor" stroke-width="0.5"/>
+        <line x1="20" y1="200" x2="380" y2="200" stroke="currentColor" stroke-width="0.5"/>
+    </svg>
+
+    <div class="container hero-grid">
+        <div class="hero-content reveal">
+            <span class="eyebrow">Historia de las Matemáticas · Renacimiento Francés</span>
+            <h1 class="hero-title">François Viète</h1>
+            <p class="hero-subtitle">{{ meta.subtitle }} · (1540 – 1603)</p>
+
+            <blockquote class="hero-quote">
+                <p class="quote-latin">“{{ meta.quote_latin }}”</p>
+                <p class="quote-translation">{{ meta.quote_spanish }}</p>
+                <footer>— {{ meta.quote_source }}</footer>
+            </blockquote>
+
+            <p class="hero-intro">
+                Jurista, consejero real y criptoanalista al servicio de la Corona francesa, François Viète
+                transformó el álgebra para siempre al introducir el uso sistemático de letras tanto para
+                las incógnitas como para los parámetros conocidos. Su <em>logistica speciosa</em> marcó la
+                transición definitiva del cálculo retórico medieval hacia el lenguaje simbólico de la
+                matemática moderna.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#biografia" class="btn btn-primary">Explorar biografía</a>
+                <a href="#aportes" class="btn btn-secondary">Ver aportes y ejemplos</a>
+            </div>
+        </div>
+
+        <figure class="hero-portrait-card reveal">
+            <div class="portrait-frame">
+                <img
+                    src="{{ url_for('static', filename='images/viete_portrait.jpg') }}"
+                    alt="Ilustración artística de estilo grabado renacentista que representa a François Viète en su estudio con compás y tratados matemáticos."
+                    loading="eager"
+                >
+            </div>
+            <figcaption>
+                <strong>François Viète (Franciscus Vieta)</strong>
+                <span>Ilustración artística estilo grabado del siglo XVI elaborada para este proyecto educativo con IA.</span>
+            </figcaption>
+        </figure>
+    </div>
+</section>

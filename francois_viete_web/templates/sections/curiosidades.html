@@ -1,0 +1,24 @@
+<!-- SECCIÓN 8: DATOS CURIOSOS -->
+<section id="curiosidades" class="section section-parchment">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">08 · Anécdotas verificadas</span>
+            <h2>Datos curiosos sobre François Viète</h2>
+            <p class="section-lead">
+                Hechos documentados que muestran su ingenio criptográfico, su agilidad matemática
+                y el reconocimiento que perdura hasta hoy.
+            </p>
+        </header>
+
+        <div class="curiosities-grid reveal">
+            {% for item in curiosities %}
+            <article class="curiosity-card">
+                <span class="curiosity-index">0{{ loop.index }}</span>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.fact }}</p>
+                <footer class="curiosity-source">Fuente: {{ item.source }}</footer>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

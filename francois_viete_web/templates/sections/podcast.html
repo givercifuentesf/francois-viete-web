@@ -1,0 +1,77 @@
+<!-- SECCIÓN 6: PODCAST (ESPACIO RESERVADO) -->
+<section id="podcast" class="section section-parchment">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">06 · Recurso sonoro</span>
+            <h2>Podcast académico sobre François Viète</h2>
+        </header>
+
+        <div class="podcast-studio-card reveal">
+            <!-- Espacio reservado para imagen de portada -->
+            <div class="podcast-cover-placeholder">
+                <img
+                    src="{{ url_for('static', filename='images/portada_podcast.jpg') }}"
+                    alt="Portada del podcast sobre François Viète"
+                    style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-subtle);"
+                >
+            </div>
+
+            <!-- Información y reproductor visual en espera -->
+            <div class="podcast-body">
+                <h3>Episodio: François Viète y el nacimiento del álgebra simbólica</h3>
+                <p class="podcast-description">
+                    Espacio destinado a una cápsula sonora educativa sobre la trayectoria de François
+                    Viète, su labor como criptoanalista real y el impacto de su <em>logistica speciosa</em>.
+                </p>
+
+                <!-- Reproductor de audio real -->
+                <div class="audio-player-real" style="margin: 1.25rem 0;">
+                    <audio controls preload="metadata" style="width: 100%;">
+                        <source src="{{ url_for('static', filename='audio/podcast_viete.mp3') }}" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio HTML5.
+                    </audio>
+                </div>
+
+                <!-- Espacio reservado para transcripción -->
+                <div class="transcript-placeholder">
+                    <h4>Transcripción del episodio</h4>
+                    <p>
+                       François Viète (1540–1603) y sus aportes matemáticos François Viète fue un matemático francés nacido en 1540 y fallecido en 1603. Es reconocido como una de las figuras más importantes en la historia del álgebra, 
+                       debido a sus contribuciones al desarrollo de los símbolos y métodos utilizados para representar y resolver problemas matemáticos. 
+                       unque también se desempeñó como abogado y trabajó al servicio de la administración francesa, dedicó gran parte de su tiempo al estudio de las matemáticas. 
+                       us investigaciones ayudaron a cambiar la manera en que se expresaban las operaciones y las ecuaciones, facilitando el desarrollo de nuevos métodos de cálculo. 
+                       Uno de sus principales aportes fue impulsar el uso de letras para representar cantidades conocidas y desconocidas en las expresiones algebraicas. Antes de que esta forma de representación se extendiera, 
+                       muchos problemas matemáticos se expresaban principalmente mediante palabras y procedimientos escritos. 
+                       iète contribuyó a que las letras se utilizaran de una manera más sistemática para representar cantidades, lo que permitió escribir ecuaciones de forma más clara y general. 
+                       Gracias a esta manera de expresar las matemáticas, fue posible trabajar con diferentes problemas utilizando una misma estructura, sin tener que describir cada situación únicamente con palabras. 
+                       Otro aporte importante fue el desarrollo del álgebra simbólica, que consiste en representar operaciones, cantidades y relaciones matemáticas mediante símbolos y letras. 
+                       Viète ayudó a establecer métodos que permitían organizar mejor las expresiones algebraicas y estudiar las relaciones entre sus diferentes elementos. Sus ideas fueron importantes para que las matemáticas 
+                       avanzaran desde la resolución de problemas particulares hacia el estudio de reglas y procedimientos que podían aplicarse a muchos casos. Aunque su notación era diferente de la que utilizamos actualmente, 
+                       us trabajos contribuyeron a establecer algunas de las bases del lenguaje algebraico moderno. También realizó importantes contribuciones al estudio de las ecuaciones. 
+                       Sus investigaciones permitieron desarrollar procedimientos para trabajar con ecuaciones algebraicas y comprender mejor la relación entre sus elementos. Entre sus aportes más conocidos se encuentran las fórmulas de Viète, 
+                       que relacionan las raíces o soluciones de una ecuación con sus coeficientes. Estas relaciones son útiles porque permiten conocer propiedades de las soluciones sin necesidad de calcularlas siempre de manera individual. 
+                       Por ejemplo, en una ecuación cuadrática de la forma \(ax^2+bx+c=0\), si sus raíces son \(x_1\) y \(x_2\), se cumplen las siguientes relaciones: - La suma de las raíces es \(-b/a\). - El producto de las raíces es \(c/a\). 
+                       Estas relaciones permiten comprobar soluciones y resolver ciertos problemas algebraicos de manera más sencilla. Aunque hoy forman parte de los conocimientos básicos de 
+                       álgebra, fueron importantes para el desarrollo histórico del estudio de las ecuaciones. Además de sus trabajos en álgebra, François Viète realizó aportes a la trigonometría,
+                        una rama de las matemáticas que estudia las relaciones entre los ángulos y los lados de los triángulos. En 1593 publicó una obra relacionada con la resolución de problemas
+                        trigonométricos, en la que presentó métodos para trabajar con relaciones entre ángulos y cantidades matemáticas. Sus investigaciones contribuyeron a ampliar los procedimientos
+                         disponibles para resolver problemas geométricos y trigonométricos. Viète también se interesó por los métodos para calcular valores relacionados con el número pi (\(\pi\)),
+                          que representa la relación entre la longitud de una circunferencia y su diámetro. En sus investigaciones utilizó procedimientos matemáticos que permitían aproximarse a este 
+                          número. Estos trabajos muestran que sus intereses no se limitaron al álgebra, sino que también abarcaron otras áreas importantes de las matemáticas. Entre sus obras más reconocidas se encuentra 
+                          In artem analyticam isagoge, publicada en 1591. En este trabajo presentó ideas sobre el análisis algebraico y el uso de símbolos para representar cantidades y 
+                          relaciones matemáticas. Posteriormente, en otras publicaciones, desarrolló sus investigaciones y presentó diferentes métodos para resolver problemas. Sus obras fueron 
+                          relevantes para los matemáticos posteriores, quienes continuaron perfeccionando la notación y los procedimientos algebraicos. Es importante destacar que François Viète 
+                          o creó por sí solo todo el sistema de símbolos que se utiliza actualmente en matemáticas. El álgebra moderna se desarrolló gracias a las contribuciones de numerosos 
+                          matemáticos a lo largo de varios siglos. Sin embargo, Viète tuvo un papel fundamental en ese proceso porque ayudó a establecer una forma más sistemática de representar 
+                          cantidades y trabajar con ecuaciones. Sus ideas facilitaron que las matemáticas se expresaran mediante reglas generales, en lugar de depender exclusivamente de 
+                          explicaciones escritas para cada problema. En conclusión, François Viète fue un matemático que contribuyó significativamente al desarrollo del álgebra moderna. 
+                          Sus principales aportes fueron el uso sistemático de letras para representar cantidades, el desarrollo del álgebra simbólica, el estudio de las ecuaciones, 
+                          las relaciones entre sus raíces y coeficientes, y sus investigaciones en trigonometría. Su trabajo permitió expresar los problemas matemáticos de una manera más 
+                          rganizada y facilitó el desarrollo de nuevos métodos de resolución. Por esta razón, su legado continúa siendo importante en la enseñanza y el estudio de las matemáticas, 
+                          especialmente en el álgebra que se aprende actualmente en las instituciones educativas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

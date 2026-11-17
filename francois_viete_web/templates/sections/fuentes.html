@@ -1,0 +1,24 @@
+<!-- SECCIÓN 9: FUENTES BIBLIOGRÁFICAS -->
+<section id="fuentes" class="section">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">09 · Rigor documental · Normas APA (7.ª ed.)</span>
+            <h2>Fuentes bibliográficas</h2>
+            <p class="section-lead">
+                Referencias académicas reales y consultadas directamente para garantizar la veracidad
+                histórica y matemática de este sitio web.
+            </p>
+        </header>
+
+        <ol class="bibliography-list reveal">
+            {% for ref in bibliography %}
+            <li class="bib-item">
+                <p class="bib-citation">{{ ref.citation }}</p>
+                <a href="{{ ref.url }}" target="_blank" rel="noopener noreferrer" class="bib-link">
+                    {{ ref.url }} ↗
+                </a>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>

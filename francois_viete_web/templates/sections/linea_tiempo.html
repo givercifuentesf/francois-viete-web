@@ -1,0 +1,42 @@
+<!-- SECCIÓN 3: LÍNEA DE TIEMPO -->
+<section id="linea-tiempo" class="section">
+    <div class="container">
+        <header class="section-header reveal">
+            <span class="section-kicker">03 · Cronología histórica</span>
+            <h2>Línea de tiempo de su vida y obra</h2>
+            <p class="section-lead">
+                Filtra los acontecimientos documentados por etapa vital. Las fechas con registros
+                divergentes o incompletos se señalan expresamente.
+            </p>
+        </header>
+
+        <!-- Controles interactivos de filtrado -->
+        <div class="timeline-filters reveal" role="group" aria-label="Filtrar línea de tiempo por etapa">
+            <button type="button" class="filter-btn active" data-filter="all">Todas las etapas</button>
+            <button type="button" class="filter-btn" data-filter="formacion">Formación y primeros años</button>
+            <button type="button" class="filter-btn" data-filter="servicio">Servicio real y exilio</button>
+            <button type="button" class="filter-btn" data-filter="obra">Obra matemática cumbre</button>
+        </div>
+
+        <div class="timeline-wrapper" id="timelineList">
+            {% for event in timeline %}
+            <article class="timeline-item reveal" data-era="{{ event.era }}">
+                <div class="timeline-marker" aria-hidden="true"></div>
+                <div class="timeline-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-year">{{ event.year }}</span>
+                        <span class="timeline-era-badge">{{ event.era_label }}</span>
+                    </div>
+                    <h3>{{ event.title }}</h3>
+                    <p>{{ event.description }}</p>
+                    {% if not event.verified and event.note %}
+                    <p class="timeline-rigor-note">
+                        <strong>Nota documental:</strong> {{ event.note }}
+                    </p>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
